@@ -1,0 +1,10 @@
+name: CI_CD_Exercise
+on: [push] # Chạy mỗi khi bạn push code lên
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Kiem tra file index
+        run: ls -l index.* # Lệnh này để kiểm tra file index có tồn tại không
