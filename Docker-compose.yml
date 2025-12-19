@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "8088:80" # Đúng port 8088 như trên bảng
+    volumes:
+      - ./:/var/www/html
+  db:
+    image: mysql:5.7 # Đúng MySQL 5 như trên bảng
+    ports:
+      - "3310:3306" # Đúng port 3310 như trên bảng
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
